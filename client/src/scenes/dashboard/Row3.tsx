@@ -9,7 +9,7 @@ import {
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid, GridCellParams } from "@mui/x-data-grid";
 import { useMemo } from "react";
-import { Cell, Pie, PieChart } from "recharts";
+import { Cell, Pie, PieChart, Tooltip } from "recharts";
 
 function Row3() {
   const { palette } = useTheme();
@@ -175,6 +175,7 @@ function Row3() {
                   bottom: 0,
                 }}
               >
+                <Tooltip formatter={(v) => `$${v}`} position={{ x: -70 , y: -20}} />
                 <Pie
                   stroke="none"
                   data={data}
